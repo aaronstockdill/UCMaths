@@ -1,5 +1,5 @@
 # UCMaths
-A LaTeX Class for UC Mathematics and Statistics students. 
+A LaTeX Class for UC Mathematics and Statistics students.
 
 ## Packages
 This class automatically makes available the following packages:
@@ -78,5 +78,6 @@ The preamble declarations are:
 + `coursecode`, to specify the course this is for. Required.
 + `coursetitle`, the "natural" name of the course. Requred.
 + `due`, the date the project is due. Required.
++ `coverinfo`, some extra details to put on the cover sheet. Optional.
 
 `\maketitle` will insert the coversheet and title.

@@ -90,6 +90,8 @@
 
 %  TITLES and COVERS
 
+\def\@author{\@empty}
+
 \def\@studentid{\@empty}
 \newcommand{\studentid}[1]{\gdef\@studentid{#1}}
 
@@ -156,12 +158,15 @@
 \renewcommand{\maketitle}{%
 \@makecover
 \@maketitlehead
+\if\@author\@empty
+\else
 \vspace{0.0cm}
 \begin{center}
 \large
 \@author \\
 \@studentid
 \end{center}
+\fi
 \@maketitlebar
 \vspace{1cm}
 }
