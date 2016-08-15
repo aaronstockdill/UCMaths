@@ -196,6 +196,8 @@
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
 \DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
