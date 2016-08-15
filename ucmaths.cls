@@ -9,7 +9,7 @@
 %% Attribution-ShareAlike 4.0 International License.
 % This file was originally created by Aaron Stockdill.
 
-\def\fileversion{1.0}
+\def\fileversion{1.0.2}
 \def\filedate{2016/08/10}
 
 %% Thanks to:
@@ -209,6 +209,10 @@
 \newcommand{\diff}{\mathrm{d}}
 \newcommand{\divides}{\mid}
 \newcommand{\sigfig}[1]{\quad(4\text{ s.f.})}
+
+\let\oldepsilon\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\oldepsilon
 
 \newcommand{\naturals}{\ensuremath{\mathbb{N}}}
 \newcommand{\integers}{\ensuremath{\mathbb{Z}}}

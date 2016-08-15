@@ -44,6 +44,7 @@ These are:
 + `\pseudoinverse`
 
 We also make available by default the environments `theorem`, `lemma`, `corollary`, and `definition`.
+It is worth noting that `\epsilon` and `\varepsilon` have been reversed.
 
 ## Styling
 The class should take care of most of your styling needs.
