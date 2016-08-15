@@ -19,6 +19,8 @@ These are:
 + `\argmax`
 + `\abs{}`
 + `\norm{}`
++ `\floor{}`
++ `\ceil{}`
 + `\mlv{}` (multi-letter variables)
 + `\diff` (d for derivatives)
 + `\divides`
