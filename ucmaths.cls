@@ -210,9 +210,12 @@
 \newcommand{\divides}{\mid}
 \newcommand{\sigfig}[1]{\quad(4\text{ s.f.})}
 
-\let\oldepsilon\epsilon
+\let\@oldepsilon\epsilon
 \let\epsilon\varepsilon
-\let\varepsilon\oldepsilon
+\let\varepsilon\@oldepsilon
+
+\let\slashedzero\emptyset
+\let\emptyset\varnothing
 
 \newcommand{\naturals}{\ensuremath{\mathbb{N}}}
 \newcommand{\integers}{\ensuremath{\mathbb{Z}}}

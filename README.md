@@ -44,7 +44,9 @@ These are:
 + `\pseudoinverse`
 
 We also make available by default the environments `theorem`, `lemma`, `corollary`, and `definition`.
-It is worth noting that `\epsilon` and `\varepsilon` have been reversed.
+It is worth noting that `\epsilon` and `\varepsilon` have been reversed,
+and `\emptyset` is now an alias for `\varnothing`.
+If you need the old empty set symbol, it is now `\slashedzero`.
 
 ## Styling
 The class should take care of most of your styling needs.
