@@ -9,8 +9,8 @@
 %% Attribution-ShareAlike 4.0 International License.
 % This file was originally created by Aaron Stockdill.
 
-\def\fileversion{1.0.2}
-\def\filedate{2016/08/10}
+\def\fileversion{1.1.0}
+\def\filedate{2016/08/22}
 
 %% Thanks to:
 %     TeXExchange, for already having all the answers.
@@ -24,6 +24,12 @@
     Aaron Stockdill]
 
 \RequirePackage{ifthen}
+\RequirePackage{array}
+\RequirePackage{calc}
+
+\newcolumntype{L}[1]{p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 %% We provide the option to have the pages prompt for a signature
 \newif\ifsignedpages
@@ -63,13 +69,23 @@
 \def\@oddhead{%
     \ifnum\value{page}=1\relax
     \else\ifnum\value{page}=2\relax
+    \else\ifnum\@groupsize>1
+    \makebox[\textwidth][l]{
+    \bgroup
+    \def\ucmaths@headrun{\numexpr \@groupsize - 2}
+    \setlength{\tabcolsep}{0pt}
+    \renewcommand{\arraystretch}{0.0}
+    \begin{tabular}{*{\ucmaths@headrun}{l@{, }} l@{ and } l}
+        \@author
+    \end{tabular}
+    \egroup}
     \else
     \bgroup
     \makebox[0.5\textwidth][l]{\@author}
     \hfill
     \makebox[0.5\textwidth][r]{\@studentid}
     \egroup
-    \fi\fi
+    \fi\fi\fi
 }
 
 \ifsignedpages
@@ -89,6 +105,11 @@
 %-------------------------------------------------------------------------------
 
 %  TITLES and COVERS
+
+\def\and{&}
+
+\def\@groupsize{1}
+\newcommand{\groupsize}[1]{\gdef\@groupsize{#1}}
 
 \def\@author{\@empty}
 
@@ -139,9 +160,19 @@
 \textbf{STAPLE this page to the front of your assignment.}\\
 \vspace{1cm}
 \renewcommand{\arraystretch}{3.0}
+\newlength{\ucmaths@cellsize}
+\setlength{\ucmaths@cellsize}{9.5cm / \@groupsize}
 \begin{tabular}{|p{4.0cm}|p{10.0cm}|}\hline
-	\textbf{Name:} & \@author \\\hline
-	\textbf{Student ID:} & \@studentid \\\hline
+    \textbf{Name:} &
+    \bgroup\renewcommand{\arraystretch}{0.0}
+    \begin{tabular}{*{\@groupsize}{L{\ucmaths@cellsize}}}
+        \@author
+    \end{tabular}\egroup \\ \hline
+    \textbf{Student ID:} &
+    \bgroup\renewcommand{\arraystretch}{0.0}
+    \begin{tabular}{*{\@groupsize}{L{\ucmaths@cellsize}}}
+        \@studentid
+    \end{tabular}\egroup \\ \hline
 \end{tabular}
 \vspace{3cm}\\
 \parbox{0.7\textwidth}{\@coverinfo}
@@ -161,11 +192,19 @@
 \if\@author\@empty
 \else
 \vspace{0.0cm}
-\begin{center}
+\newlength{\ucmaths@namesize}
+\setlength{\ucmaths@namesize}{\textwidth / \real{\@groupsize}}
+\bgroup
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{0.0}
 \large
-\@author \\
-\@studentid
-\end{center}
+\begin{tabular}{*{\@groupsize}{C{\ucmaths@namesize}}}
+    \@author
+\end{tabular} \\
+\begin{tabular}{*{\@groupsize}{C{\ucmaths@namesize}}}
+    \@studentid
+\end{tabular}
+\egroup
 \fi
 \@maketitlebar
 \vspace{1cm}

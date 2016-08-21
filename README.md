@@ -10,7 +10,7 @@ This class automatically makes available the following packages:
 
 These packages were chosen because they represent the "standard" imports when writing a mathematical document.
 
-UCMaths also makes available `enumitem` and `ifthen`, because they are used internally/set default styles.
+UCMaths also makes available `enumitem`, `array`, `calc` and `ifthen`, because they are used internally/set default styles.
 
 ## Macros
 Several macros over those from the above packages are also included, so make writing the majority of undergraduate course content easier.
@@ -72,8 +72,8 @@ The basic structure of a file should look like
 ```
 
 The class options are:
-+ `twosided`, which inserts a blank page between the coversheet and the main content, so that when printing twosided the coversheet is singlesided.
-+ `signature` inserts a signature line at the bottom of each (noncover) page.
++ `twosided`, which inserts a blank page between the coversheet and the main content, so that when printing two-sided the coversheet is single-sided.
++ `signature` inserts a signature line at the bottom of each (non-cover) page.
 + `a4paper` and `12pt` are as for article, recommended for New Zealand.
 
 The preamble declarations are:
@@ -81,8 +81,9 @@ The preamble declarations are:
 + `author`, the student's name. This can be skipped by assignment authors.
 + `studentid`, the student's UC Student ID. This can also be skipped by assignment authors.
 + `coursecode`, to specify the course this is for. Required.
-+ `coursetitle`, the "natural" name of the course. Requred.
++ `coursetitle`, the "natural" name of the course. Required.
 + `due`, the date the project is due. Required.
 + `coverinfo`, some extra details to put on the cover sheet. Optional.
++ `groupsize`, which specifies how many people are in the group. Optional, unless the groups are larger than one. Separate Authors and Student IDs with `\and`.
 
 `\maketitle` will insert the coversheet and title.
