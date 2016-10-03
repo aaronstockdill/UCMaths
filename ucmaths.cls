@@ -256,6 +256,8 @@
 \let\slashedzero\emptyset
 \let\emptyset\varnothing
 
+\let\infinity\infty
+
 \newcommand{\naturals}{\ensuremath{\mathbb{N}}}
 \newcommand{\integers}{\ensuremath{\mathbb{Z}}}
 \newcommand{\rationals}{\ensuremath{\mathbb{Q}}}

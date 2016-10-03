@@ -25,6 +25,7 @@ These are:
 + `\diff` (d for derivatives)
 + `\divides`
 + `\sigfig{}` (only a number is required)
++ `\infinity` (an alias for `\infty`)
 + `\naturals`
 + `\integers`
 + `\rationals`
