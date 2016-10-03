@@ -87,3 +87,5 @@ The preamble declarations are:
 + `groupsize`, which specifies how many people are in the group. Optional, unless the groups are larger than one. Separate Authors and Student IDs with `\and`.
 
 `\maketitle` will insert the coversheet and title.
+If you want to use your own title, use `\oldmaketitle`.
+To insert the cover page by itself, use `\makecoverpage`.

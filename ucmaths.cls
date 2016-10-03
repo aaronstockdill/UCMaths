@@ -151,7 +151,7 @@
 \end{center}
 }
 
-\newcommand{\@makecover}{%
+\newcommand{\makecoverpage}{%
 \@maketitlehead
 \vspace{0cm}
 \@maketitlebar
@@ -187,7 +187,7 @@
 
 \let\oldmaketitle\maketitle
 \renewcommand{\maketitle}{%
-\@makecover
+\makecoverpage
 \@maketitlehead
 \if\@author\@empty
 \else
